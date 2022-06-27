@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" >
+    <i class="align-middle me-2" data-feather="edit"></i>
+    Add City
+</button>`
+<table>
+    <tr>
+        {tableHead}
+    </tr>
+        {tableData}
+</table>
+
+
+<!--model form-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adding</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+
+                    <input type="hidden" class="form-control" id="functioning"
+                           name="functioning" value="edit-btn">
+                    <div class="mb-3">
+                        <label for="id-el" class="col-form-label">City ID:</label>
+                        <input type="number" class="form-control" id="id-el" name="id_el"
+                        readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cityName" class="col-form-label">City Name:</label>
+                        <input type="text" class="form-control" id="cityName" name="cityName"
+                               >
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="col-form-label">Country</label>
+                        <input type="option" class="form-control" id="country"
+                                name="country" required>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="area" class="col-form-label">Area:</label>
+                        <input type="text" class="form-control" id="area"
+                               name="area">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Population" class="col-form-label">Population:</label>
+                        <input type="number" class="form-control" id="Population"
+                               name="population">
+                    </div>
+                    <div class="mb-3">
+                        <label for="GDP" class="col-form-label">GDP:</label>
+                        <input type="number" class="form-control" id="GDP" name="GDP">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea type="textarea" class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getData(objProduct) {
+        document.getElementById('id-el').value = objProduct.id;
+        document.getElementById('cityName').value = objProduct.cityName;
+        document.getElementById('country').value = objProduct.country_id;
+        document.getElementById('area').value = objProduct.area;
+        document.getElementById('Population').value = objProduct.population;
+        document.getElementById('GDP').value = objProduct.GDP;
+        document.getElementById('description').value = objProduct.cityDescription;
+    }
+
+
+</script>
+
+</body>
+</html>
